@@ -1,6 +1,6 @@
 ﻿namespace CrudSimples1
     {
-    partial class Form1
+    partial class txtBox2
         {
         /// <summary>
         /// Required designer variable.
@@ -31,18 +31,21 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgTabela = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.bntUpdate = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBox3 = new System.Windows.Forms.TextBox();
+            this.txtBox4 = new System.Windows.Forms.TextBox();
+            this.txtBox5 = new System.Windows.Forms.TextBox();
+            this.txtBox6 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConsultar
@@ -73,14 +76,16 @@
             this.btnInsert.TabIndex = 3;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // dataGridView2
+            // dgTabela
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(46, 38);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(443, 190);
-            this.dataGridView2.TabIndex = 0;
+            this.dgTabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTabela.Location = new System.Drawing.Point(46, 38);
+            this.dgTabela.Name = "dgTabela";
+            this.dgTabela.Size = new System.Drawing.Size(443, 190);
+            this.dgTabela.TabIndex = 0;
+            this.dgTabela.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTabela_CellContentClick);
             // 
             // btnDelete
             // 
@@ -90,6 +95,7 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // bntUpdate
             // 
@@ -101,12 +107,13 @@
             this.bntUpdate.UseVisualStyleBackColor = true;
             this.bntUpdate.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox1
+            // txtBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 259);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtBox1.Location = new System.Drawing.Point(88, 259);
+            this.txtBox1.Name = "txtBox1";
+            this.txtBox1.Size = new System.Drawing.Size(100, 20);
+            this.txtBox1.TabIndex = 6;
+            this.txtBox1.TextChanged += new System.EventHandler(this.txtBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -114,37 +121,40 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // txtBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(336, 324);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtBox3.Location = new System.Drawing.Point(336, 324);
+            this.txtBox3.Name = "txtBox3";
+            this.txtBox3.Size = new System.Drawing.Size(100, 20);
+            this.txtBox3.TabIndex = 8;
+            this.txtBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // txtBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(88, 395);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtBox4.Location = new System.Drawing.Point(88, 395);
+            this.txtBox4.Name = "txtBox4";
+            this.txtBox4.Size = new System.Drawing.Size(100, 20);
+            this.txtBox4.TabIndex = 9;
             // 
-            // textBox5
+            // txtBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(88, 481);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtBox5.Location = new System.Drawing.Point(88, 481);
+            this.txtBox5.Name = "txtBox5";
+            this.txtBox5.Size = new System.Drawing.Size(100, 20);
+            this.txtBox5.TabIndex = 10;
             // 
-            // textBox6
+            // txtBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(336, 483);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
+            this.txtBox6.Location = new System.Drawing.Point(336, 483);
+            this.txtBox6.Name = "txtBox6";
+            this.txtBox6.Size = new System.Drawing.Size(100, 20);
+            this.txtBox6.TabIndex = 11;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblStatus);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(88, 528);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
@@ -152,6 +162,7 @@
             this.groupBox1.Size = new System.Drawing.Size(381, 31);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
@@ -163,28 +174,49 @@
             this.label1.Text = "Status";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(38, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(648, 214);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(6, 15);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txtBox2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 584);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtBox6);
+            this.Controls.Add(this.txtBox5);
+            this.Controls.Add(this.txtBox4);
+            this.Controls.Add(this.txtBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBox1);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.dataGridView2);
-            this.Name = "Form1";
+            this.Controls.Add(this.dgTabela);
+            this.Controls.Add(this.groupBox2);
+            this.Name = "txtBox2";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,17 +226,19 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgTabela;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button bntUpdate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBox3;
+        private System.Windows.Forms.TextBox txtBox4;
+        private System.Windows.Forms.TextBox txtBox5;
+        private System.Windows.Forms.TextBox txtBox6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblStatus;
         }
     }
 
