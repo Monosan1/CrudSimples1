@@ -26,6 +26,7 @@ namespace CrudSimples1
 
         private void button2_Click(object sender, EventArgs e)
             {
+            // SELECT
             string strConexao = "Data Source=DESKTOP-D0ANE1N;Initial Catalog=dbAula01;Integrated Security=True";
             string query = "select * from tb01 where ID=" + txtBox1.Text;
             SqlConnection con = new SqlConnection(strConexao);
@@ -45,13 +46,29 @@ namespace CrudSimples1
 
         private void button5_Click(object sender, EventArgs e)
             {
+            // UPDATE
+            lblStatus.Text = "";
             string strConexao = "Data Source=DESKTOP-D0ANE1N;Initial Catalog=dbAula01;Integrated Security=True";
-            string query = "select * from tb01";
+            string query = "UPDATE tb01 SET Nome='" + txtBox6.Text + "' where Id=" + txtBox5.Text;
+
+            SqlConnection con = new SqlConnection(strConexao);
+            SqlCommand sqlCommand = new SqlCommand(query,con);
+
+            con.Open();
+
+            sqlCommand.ExecuteNonQuery();
+
+            con.Close();
+
+            lblStatus.Text = "Update Realizado com sucesso";
 
             }
 
+
         private void btnConsultar_Click(object sender, EventArgs e)
             {
+            lblStatus.Text = "";
+
             string strConexao = "Data Source=DESKTOP-D0ANE1N;Initial Catalog=dbAula01;Integrated Security=True";
             string query = "select * from tb01";
             SqlConnection con = new SqlConnection(strConexao);
@@ -59,8 +76,10 @@ namespace CrudSimples1
             DataTable dt = new DataTable();
             da.Fill(dt);
             dgTabela.DataSource = dt;
-            }
 
+            lblStatus.Text = "Registro Realizado com sucesso";
+            }
+            
         private void groupBox2_Enter(object sender, EventArgs e)
             {
 
@@ -73,13 +92,38 @@ namespace CrudSimples1
 
         private void btnInsert_Click(object sender, EventArgs e)
             {
+            lblStatus.Text = "";
             string strConexao = "Data Source=DESKTOP-D0ANE1N;Initial Catalog=dbAula01;Integrated Security=True";
-            string query = "select * from tb01";
+            string query = "INSERT INTO tb01 (Nome) Values (" + "'" + txtBox3.Text + "'" + ")";
+
+            SqlConnection con = new SqlConnection(strConexao);
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+
+            con.Open();
+
+            sqlCommand.ExecuteNonQuery();
+
+            con.Close();
+
+            lblStatus.Text = "Inserção Realizada Com Sucesso";
             }
 
         private void btnDelete_Click(object sender, EventArgs e)
             {
-            
+            lblStatus.Text = "";
+            string strConexao = "Data Source=DESKTOP-D0ANE1N;Initial Catalog=dbAula01;Integrated Security=True";
+            string Query = "DELETE tb01 where ID="+ txtBox4.Text;
+
+            SqlConnection con = new SqlConnection(strConexao);
+            SqlCommand sqlcommand = new SqlCommand(Query, con);
+
+            con.Open();
+
+            sqlcommand.ExecuteNonQuery();
+
+            con.Close();
+
+            lblStatus.Text = "Registro Apagado Com Sucesso";
             }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
